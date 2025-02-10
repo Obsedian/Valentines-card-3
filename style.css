@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: pink;
+    overflow: hidden;
+}
+
+.envelope-container {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+}
+
+.envelope {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50%;
+    background-color: darkred;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+.letter {
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.letter p {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+}
+
+.envelope-container:hover .letter {
+    transform: translateY(0);
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Heart animations */
+@keyframes floatUp {
+    from { transform: translateY(100vh); opacity: 1; }
+    to { transform: translateY(-10vh); opacity: 0; }
+}
